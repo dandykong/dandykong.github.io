@@ -8,13 +8,6 @@ function onResize() {
 
 window.onresize = onResize;
 
-function onFrame() {
-	gl.clearColor(0.3, 1.0, 0.4, 1.0);
-	gl.clear(gl.COLOR_BUFFER_BIT);
-
-	window.requestAnimationFrame(onFrame);
-}
-
 function initWebGL2() {
 	canvas = document.createElement("canvas");
 	gl = canvas.getContext("webgl2");
@@ -26,9 +19,31 @@ function initWebGL2() {
 	document.body.appendChild(canvas);
 	onResize();
 	
-	gl.clearColor(1.0, 0.0, 0.0, 1.0);
-	gl.clear(gl.COLOR_BUFFER_BIT);
+	const renderer = new webgfx.Renderer();
+	renderer.clear([0.3, 1.0, 0.4, 1.0]);
 	
+	const mesh = new webgfx.Mesh();
+	mesh.loadFromData(webgfxGlobals.triangle);
+
+	const material = new webgfx.Material();
+	const identityMatrix = new Float32Array([
+		1.0, 0.0, 0.0, 0.0,
+		0.0, 1.0, 0.0, 0.0,
+		0.0, 0.0, 1.0, 0.0,
+		0.0, 0.0, 0.0, 1.0
+	]);
+	material.setProjection(identityMatrix);
+	material.setView(identityMatrix);
+	material.setModel(identityMatrix);
+	
+	function onFrame() {
+		gl.viewport(0, 0, canvas.width, canvas.height);
+		renderer.clear([0.3, 1.0, 0.4, 1.0]);
+
+		renderer.draw(mesh, material);
+
+		window.requestAnimationFrame(onFrame);
+	}
 	window.requestAnimationFrame(onFrame);
 }
 
