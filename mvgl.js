@@ -1,5 +1,5 @@
 let gl = null;
-const webgl = {
+const mvgl = {
 	VertexBuffer: class {
 		constructor() {
 			this.va = gl.createVertexArray();

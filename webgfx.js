@@ -2,7 +2,7 @@ let webgfxGlobals = {};
 const webgfx = {
 	Mesh: class {
 		constructor() {
-			this.vertexbuffer = new webgl.VertexBuffer();
+			this.vertexbuffer = new mvgl.VertexBuffer();
 			this.vertexbuffer.vertexLayout([3, 2, 3]);
 		}
 		free() {
@@ -24,7 +24,7 @@ const webgfx = {
 	},
 	Texture: class {
 		constructor() {
-			this.texture = new webgl.Texture();
+			this.texture = new mvgl.Texture();
 		}
 		free() {
 			this.texture.free();
@@ -39,14 +39,14 @@ const webgfx = {
 	},
 	Material: class {
 		constructor(customShader = null) {
-			this.shader = new webgl.Shader();
+			this.shader = new mvgl.Shader();
 			this.shader.join(webgfxGlobals.vSS);
 			if(!customShader) {
 				this.shader.join(webgfxGlobals.fSS);
 				this.shader.link();
 			}
 			else {
-				let fSS = new webgl.SubShader(gl.FRAGMENT_SHADER, webgfxGlobals.fSSC0 + customShader + webgfxGlobals.fSSC1); 
+				let fSS = new mvgl.SubShader(gl.FRAGMENT_SHADER, webgfxGlobals.fSSC0 + customShader + webgfxGlobals.fSSC1); 
 				this.shader.join(fSS);
 				this.shader.link();
 				fSS.free();
@@ -109,7 +109,7 @@ const webgfx = {
 			webgfxGlobals.fSSC1 = "\nvoid main() {\n\
 				o_Color = shader();\n\
 			}";
-			webgfxGlobals.vSS = new webgl.SubShader(gl.VERTEX_SHADER, "#version 300 es\n\
+			webgfxGlobals.vSS = new mvgl.SubShader(gl.VERTEX_SHADER, "#version 300 es\n\
 			precision mediump float;\n\
 			\n\
 			layout(location = 0) in vec3 a_Position;\n\
@@ -127,7 +127,7 @@ const webgfx = {
 				v_TexCoord = a_TexCoord;\n\
 				v_TexCoord.y = 1.0 - v_TexCoord.y;\n\
 			}");
-			webgfxGlobals.fSS = new webgl.SubShader(gl.FRAGMENT_SHADER, webgfxGlobals.fSSC0 + "\nvec4 shader() { return u_Color; }\n" + webgfxGlobals.fSSC1),
+			webgfxGlobals.fSS = new mvgl.SubShader(gl.FRAGMENT_SHADER, webgfxGlobals.fSSC0 + "\nvec4 shader() { return u_Color; }\n" + webgfxGlobals.fSSC1),
 				
 			webgfxGlobals.triangle = [
 					-0.5, -0.5, 0.0,
