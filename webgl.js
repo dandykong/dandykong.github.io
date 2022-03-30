@@ -2,6 +2,9 @@ let gl = null;
 const webgl = {
 	VertexBuffer: class {
 		constructor() {
+			this.va = gl.createVertexArray();
+			gl.bindVertexArray(this.va);
+			
 			this.va = gl.createBuffer();
 			gl.bindBuffer(gl.ARRAY_BUFFER, this.vb);
 			
