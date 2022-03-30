@@ -1,5 +1,4 @@
 let canvas = null;
-let gl = null;
 
 function onResize() {
 	canvas.width = canvas.clientWidth * window.devicePixelRatio;
