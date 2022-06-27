@@ -21,11 +21,9 @@ body {
 #navbar {
 	display: flex;
 	justify-content: space-between;
-	overflow: hidden;
 	position: fixed;
-	z-index: 9999;
+	z-index: 99;
 	width: 100%;
-	padding: 10px;
 	background-color: white;
 	box-shadow: 0px 0px 20px white;
 }
@@ -33,10 +31,74 @@ body {
 	display: flex;
 	align-content: center;
 	align-items: center;
-	margin-right: 10px;
 }
-.nav_group a {
-	margin-right: 10px;
+.nav_group a, .nav_dropbtn {
+	padding: 10px;
+}
+.nav_group a:hover {
+	background-color: cyan;
+	box-shadow: 0px 0px 20px cyan;
+}
+.nav_active {
+	pointer-events: none;
+	background-color: #99FFFF;
+	box-shadow: 0px 0px 20px #99FFFF;
+}
+
+.nav_drop {
+	position: relative;
+	display: inline-block;
+}
+.nav_drop_content {
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	z-index: 100;
+	background-color: white;
+	box-shadow: 0px 0px 20px white;
+}
+.nav_drop_content a {
+	text-decoration: none;
+	display: block;
+}
+
+.nav_drop:hover .nav_drop_content {
+	display: block;
+}
+.nav_drop:hover .nav_dropbtn {
+	background-color: cyan;
+	box-shadow: 0px 0px 20px cyan;
+}
+
+#history_and_skills {
+	display: flex;
+}
+
+#history_container {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+}
+.history_header {
+	background-color: lightgray;
+}
+.history_subcontainer {
+	display: inline-block;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 0px 0px 20px cyan;
+	border: 2px solid #99FFFF;
+	outline: 2px solid cyan;
+}
+#history_container h3, #skills_container h3 {
+	margin: 0;
+}
+
+#skills_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
 }
 
 .caption {
