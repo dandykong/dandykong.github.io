@@ -118,3 +118,24 @@ body {
 	border: 2px solid #99FFFF;
 	outline: 2px solid cyan;
 }
+
+input {
+	font-family: Roboto, monospace;
+	color: #009999;
+	text-shadow: 0px 0px 8px cyan;
+}
+input[type=button], input[type=button]:active {
+	background-color: #009999;
+	box-shadow: 0px 0px 20px #009999;
+	border: none;
+	color: white;
+	text-shadow: 0px 0px 8px white;
+}
+input[type=button]:hover {
+	background-color: cyan;
+	box-shadow: 0px 0px 20px cyan;
+}
+input[type=button]:disabled {
+	background-color: gray;
+	box-shadow: none;
+}
