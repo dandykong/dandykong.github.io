@@ -21,7 +21,7 @@ function includeHTML() {
       xhttp.open("GET", file, true);
       xhttp.send();
       /* Exit the function: */
-      return;
+      return Promise.resolve();
     }
   }
 }
