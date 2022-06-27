@@ -1,10 +1,9 @@
-function includeHTML(activeNav) {
+function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-	if (elmnt.id == activeNav) {elmnt.classList.add("nav_active");}
     /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("w3-include-html");
     if (file) {
