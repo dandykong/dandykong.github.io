@@ -85,9 +85,6 @@ body {
 	display: inline-block;
 	padding: 5px;
 	background-color: white;
-	box-shadow: 0px 0px 20px cyan;
-	border: 2px solid #99FFFF;
-	outline: 2px solid cyan;
 }
 #history_container h3, #skills_container h3 {
 	margin: 0;
@@ -107,13 +104,14 @@ body {
 	font-size: 18px;
 	text-align: left;
 	background-color: white;
-	box-shadow: 0px 0px 20px cyan;
 	text-shadow: 0px 0px 8px cyan;
-	border: 2px solid #99FFFF;
-	outline: 2px solid cyan;
 }
 .caption img {
 	margin-right: 10px;
+}
+
+.box {
+	box-shadow: 0px 0px 20px cyan;
 	border: 2px solid #99FFFF;
 	outline: 2px solid cyan;
 }
