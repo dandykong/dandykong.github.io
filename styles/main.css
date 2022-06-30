@@ -47,6 +47,7 @@ body {
 .nav_drop {
 	position: relative;
 	display: inline-block;
+	align-self: stretch;
 }
 .nav_drop_content {
 	display: none;
