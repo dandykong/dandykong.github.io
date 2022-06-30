@@ -34,6 +34,9 @@ body {
 .nav_group a, .nav_dropbtn {
 	padding: 10px;
 }
+.nav_dropbtn {
+	align-self: stretch;
+}
 .nav_group a:hover {
 	background-color: cyan;
 	box-shadow: 0px 0px 20px cyan;
@@ -47,7 +50,6 @@ body {
 .nav_drop {
 	position: relative;
 	display: inline-block;
-	align-self: stretch;
 }
 .nav_drop_content {
 	display: none;
