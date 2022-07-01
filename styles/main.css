@@ -69,6 +69,16 @@ body {
 	box-shadow: 0px 0px 20px cyan;
 }
 
+.landing_link {
+	padding: 10px;
+	color: #009999;
+	font-size: 18px;
+	text-shadow: 0px 0px 8px #009999;
+}
+.landing_link:hover {
+	color: cyan;
+}
+
 #history_and_skills {
 	display: flex;
 }
