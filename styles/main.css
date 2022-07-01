@@ -147,6 +147,9 @@ body {
 	height: 200px;
 }
 .blog_entry a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: #009999;
 	text-shadow: 0px 0px 8px #009999;
 	text-decoration: none;
