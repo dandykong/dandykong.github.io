@@ -149,7 +149,6 @@ body {
 .blog_entry a {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	color: #009999;
 	text-shadow: 0px 0px 8px #009999;
 	text-decoration: none;
@@ -162,7 +161,7 @@ body {
 #blog_post_container {
 	display: flex;
 	flex-direction: column;
-	width: 400px;
+	align-items: center;
 }
 
 input {
