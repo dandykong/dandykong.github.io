@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<title>A-Frame Lab</title>
+		<meta charset="utf-8">
+		<meta name="theme-color" content="cyan">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="dandykong.github.io/test-lab">
+		<meta property="og:title" content="A-Frame Lab | dandykong.github.io">
+		<meta property="og:image" content="https://dandykong.github.io/img/aframe-lab-preview.png">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@dandykong1" />
+		<meta name="twitter:creator" content="@dandykong1" />
+		<meta name="twitter:image" content="https://dandykong.github.io/img/vroid-pfp-1-2-1-1080-square.png">
+		<link rel="stylesheet" href="https://dandykong.github.io/styles/main.css" />
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+		<script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/aframe-exokit-avatars@1.0.2"></script>
+		<script src="https://cdn.jsdelivr.net/gh/dandykong/aframe-mirror-component@master/dist/aframe-mirror-component.js"></script>
+	</head>
+	<body>
+		<div id="navbar">
+			<div class="nav_group">
+				<a href="https://dandykong.github.io/" id="nav_element_home"><img src="https://dandykong.github.io/img/iconmonstr-home-6-32.png"/></a>
+				<a href="https://dandykong.github.io/portfolio/" id="nav_element_portfolio"><img src="https://dandykong.github.io/img/iconmonstr-briefcase-1-32.png"/></a>
+				<div class="nav_drop">
+					<input type="image" class="nav_dropbtn" src="https://dandykong.github.io/img/iconmonstr-flask-2-32.png"></input>
+					<div class="nav_drop_content">
+						<a href="https://dandykong.github.io/aframe-lab/" id="nav_element_aframe_lab" class="nav_active">A-Frame Lab</a>
+					</div>
+				</div>
+			</div>
+			<div class="nav_group">
+				<input type="button" onclick="document.getElementById('avatar_select').click();" value="Select Avatar (WIP)" />
+				<input type="file" id="avatar_select" style="display: none;" accept=".glb, .vrm" />
+			</div>
+			<div class="nav_group">
+				<a href="https://www.github.com/dandykong/"><img src="https://dandykong.github.io/img/GitHub-Mark-32px.png"/></a>
+				<a href="https://www.linkedin.com/in/daniel-harrison-418552b4"><img src="https://dandykong.github.io/img/iconmonstr-linkedin-3-32.png"/></a>
+				<a href="https://www.facebook.com/profile.php?id=100070299536885"><img src="https://dandykong.github.io/img/iconmonstr-facebook-1-32.png"/></a>
+				<a href="https://twitter.com/dandykong1"><img src="https://dandykong.github.io/img/iconmonstr-twitter-1-32.png"/></a>
+				<a href="https://www.youtube.com/channel/UClqzoKW30qtgzVGG1pwoUPA"><img src="https://dandykong.github.io/img/iconmonstr-youtube-1-32.png"/></a>
+			</div>
+		</div>
+		<a-scene>
+			<a-entity environment="skyType: color; skyColor: #000020; ground: flat; groundTexture: none; groundColor: #000040; grid: 1x1; gridColor: #80CCFF"></a-entity>
+			<a-plane id="ground" visible="false" rotation="-90 0 0" height="10" width="10"></a-plane>
+			<!-- <a-entity id="rig" movement-controls position="0 0 4" kinematic-body>
+				<a-camera position="0 1 0" cursor-visible="true" cursor-scale="2" cursor-color="#0095DD" cursor-opacity="0.5"></a-camera>
+			</a-entity> -->
+			<a-assets>
+				<a-asset-item id="playermodel" src="https://dandykong.github.io/avatar/default.glb"></a-asset-item>
+			</a-assets>
+			<a-entity id="avatar_component" avatar="model: #playermodel"></a-entity>
+			<a-entity id="player">
+				<a-camera id="head" position="0 1.4 8" near="0.25" wasd-controls="acceleration: 30" look-controls>
+					<a-camera id="thirdperson" position="0 1 2" active="false" spectator="true">
+				</a-camera>
+				<a-entity id="leftHand" tracked-controls="hand: left"></a-entity>
+				<a-entity id="rightHand" tracked-controls="hand: right"></a-entity>
+			</a-entity>
+			<a-box position="0 1 0" depth="0.01" height="4" width="4" mirror="near: 0.005; distance: 10000; resolution: 1024; refraction: 1; interval: 150; repeat: true;" ></a-box>
+		</a-scene>
+		<script type="text/javascript">
+			const avatarIn = document.getElementById("avatar_select");
+			const playermodel = document.getElementById("playermodel");
+			const avatarOut = document.getElementById("avatar_component");
+			
+			avatarIn.onchange = () => {
+				let avatar = avatarIn.files[0];
+				let reader = new FileReader();
+				reader.addEventListener('loadend', function () {
+					avatarOut.setAttribute("avatar", "model", reader.result);
+					avatarOut.components.avatar.init(); //Dirty hack to set the avatar, may break if another one is selected later
+				}, false);
+				reader.readAsDataURL(avatar);
+			}
+		</script>
+	</body>
+<html>
