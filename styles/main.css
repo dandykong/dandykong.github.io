@@ -149,6 +149,7 @@ body {
 .blog_entry a {
 	display: flex;
 	justify-content: center;
+	margin-top: 10px;
 	color: #009999;
 	text-shadow: 0px 0px 8px #009999;
 	text-decoration: none;
