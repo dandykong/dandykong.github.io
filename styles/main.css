@@ -69,6 +69,13 @@ body {
 	box-shadow: 0px 0px 20px cyan;
 }
 
+.page_header {
+	display: flex;
+	margin: 32px;
+	flex-direction: column;
+	align-items: center;
+}
+
 .landing_link {
 	padding: 10px;
 	color: #009999;
@@ -78,6 +85,7 @@ body {
 }
 .landing_link:hover {
 	color: cyan;
+	text-shadow: 0px 0px 8px cyan;
 }
 
 #history_and_skills {
@@ -125,6 +133,33 @@ body {
 	box-shadow: 0px 0px 20px cyan;
 	border: 2px solid #99FFFF;
 	outline: 2px solid cyan;
+}
+
+#blog_entries_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.blog_entry {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	height: 200px;
+}
+.blog_entry a {
+	color: #009999;
+	text-shadow: 0px 0px 8px #009999;
+	text-decoration: none;
+}
+.blog_entry a:hover {
+	color: cyan;
+	text-shadow: 0px 0px 8px cyan;
+}
+
+#blog_post_container {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
 }
 
 input {
