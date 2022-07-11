@@ -27,6 +27,17 @@
 		<meta name="twitter:image" content="https://dandykong.github.io/img/vroid-pfp-1-2-1-1080-square.png">
 		
 		<link rel="stylesheet" href="https://dandykong.github.io/styles/main.css" />
+		<style type="text/css">
+			.avatar_button {
+				display: unset;
+			}
+			@media only screen and (max-width: 768px) {
+				.hide_on_aframe_mobile {
+					display: none;
+				}
+			}
+		</style>
+		
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 		<script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
@@ -34,28 +45,7 @@
 		<script src="https://cdn.jsdelivr.net/gh/dandykong/aframe-mirror-component@master/dist/aframe-mirror-component.js"></script>
 	</head>
 	<body>
-		<div id="navbar">
-			<div class="nav_group">
-				<a href="https://dandykong.github.io/" id="nav_element_home"><img src="https://dandykong.github.io/img/iconmonstr-home-6-32.png"/></a>
-				<div class="nav_drop">
-					<input type="image" class="nav_dropbtn" src="https://dandykong.github.io/img/iconmonstr-flask-2-32.png"></input>
-					<div class="nav_drop_content">
-						<a href="https://dandykong.github.io/aframe-lab/" id="nav_element_aframe_lab" class="nav_active">A-Frame Lab</a>
-					</div>
-				</div>
-			</div>
-			<div class="nav_group">
-				<input type="button" onclick="document.getElementById('avatar_select').click();" value="Select Avatar (WIP)" />
-				<input type="file" id="avatar_select" style="display: none;" accept=".glb, .vrm" />
-			</div>
-			<div class="nav_group">
-				<!-- <a href="https://www.github.com/dandykong/"><img src="https://dandykong.github.io/img/GitHub-Mark-32px.png"/></a>
-				<a href="https://www.linkedin.com/in/daniel-harrison-418552b4"><img src="https://dandykong.github.io/img/iconmonstr-linkedin-3-32.png"/></a>
-				<a href="https://www.facebook.com/profile.php?id=100070299536885"><img src="https://dandykong.github.io/img/iconmonstr-facebook-1-32.png"/></a>
-				<a href="https://twitter.com/dandykong1"><img src="https://dandykong.github.io/img/iconmonstr-twitter-1-32.png"/></a>
-				<a href="https://www.youtube.com/channel/UClqzoKW30qtgzVGG1pwoUPA"><img src="https://dandykong.github.io/img/iconmonstr-youtube-1-32.png"/></a> -->
-			</div> <!-- Will overflow on mobile due to the avatar button -->
-		</div>
+		<div id="navbar" w3-include-html="views/nav.html"></div>
 		<a-scene>
 			<a-entity environment="skyType: color; skyColor: #000020; ground: flat; groundTexture: none; groundColor: #000040; grid: 1x1; gridColor: #80CCFF"></a-entity>
 			<a-plane id="ground" visible="false" rotation="-90 0 0" height="10" width="10"></a-plane>
@@ -89,6 +79,10 @@
 				}, false);
 				reader.readAsDataURL(avatar);
 			}
+		</script>
+		<script type="text/javascript">
+		function getActiveNav() {return "nav_element_aframe_lab";}
+		includeHTML();
 		</script>
 	</body>
 <html>

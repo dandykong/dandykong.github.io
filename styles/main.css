@@ -45,6 +45,9 @@ body {
 	background-color: #99FFFF;
 	box-shadow: 0px 0px 20px #99FFFF;
 }
+.avatar_button {
+	display: none;
+}
 
 .nav_drop {
 	position: relative;
