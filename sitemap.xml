@@ -2,21 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://dandykong.github.io/</loc>
-		<priority>0.2</priority>
+		<changefreq>daily</changefreq>
 	</url>
 	<url>
 		<loc>https://dandykong.github.io/sitemap.xml</loc>
+		<changefreq>daily</changefreq>
 	</url>
 	<url>
 		<loc>https://dandykong.github.io/portfolio/</loc>
-		<priority>1.0</priority>
+		<changefreq>daily</changefreq>
 	</url>
 	<url>
 		<loc>https://dandykong.github.io/blog/</loc>
+		<changefreq>daily</changefreq>
 	</url>
 	<url>
 		<loc>https://dandykong.github.io/blog/2022/07/01/pardon-my-dust/</loc>
-		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://dandykong.github.io/aframe-lab/</loc>
