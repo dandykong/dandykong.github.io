@@ -46,6 +46,10 @@
 	</head>
 	<body>
 		<div id="navbar" w3-include-html="views/nav.html"></div>
+		<script type="text/javascript">
+		function getActiveNav() {return "nav_element_aframe_lab";}
+		includeHTML();
+		</script>
 		<a-scene>
 			<a-entity environment="skyType: color; skyColor: #000020; ground: flat; groundTexture: none; groundColor: #000040; grid: 1x1; gridColor: #80CCFF"></a-entity>
 			<a-plane id="ground" visible="false" rotation="-90 0 0" height="10" width="10"></a-plane>
@@ -79,10 +83,6 @@
 				}, false);
 				reader.readAsDataURL(avatar);
 			}
-		</script>
-		<script type="text/javascript">
-		function getActiveNav() {return "nav_element_aframe_lab";}
-		includeHTML();
 		</script>
 	</body>
 <html>
