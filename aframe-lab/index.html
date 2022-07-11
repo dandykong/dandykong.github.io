@@ -28,12 +28,12 @@
 		
 		<link rel="stylesheet" href="https://dandykong.github.io/styles/main.css" />
 		<style type="text/css">
-			.avatar_button {
-				display: flex;
-			}
-			@media only screen and (max-width: 768px) {
+			@media only screen and (max-width: 525px) {
 				.hide_on_aframe_mobile {
 					display: none;
+				}
+				.avatar_button_offset {
+					display: flex;
 				}
 			}
 		</style>
@@ -55,10 +55,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="nav_group avatar_button">
+			<div class="nav_group">
 				<input type="button" onclick="document.getElementById('avatar_select').click();" value="Select Avatar (WIP)" />
 				<input type="file" id="avatar_select" style="display: none;" accept=".glb, .vrm" />
 			</div>
+			<div class="nav_group avatar_button_offset"></div>
 			<div class="nav_group hide_on_aframe_mobile">
 				<a href="https://www.github.com/dandykong/"><img src="https://dandykong.github.io/img/GitHub-Mark-32px.png"/></a>
 				<a href="https://www.linkedin.com/in/daniel-harrison-418552b4"><img src="https://dandykong.github.io/img/iconmonstr-linkedin-3-32.png"/></a>
