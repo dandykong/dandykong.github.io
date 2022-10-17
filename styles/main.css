@@ -90,6 +90,11 @@ a {
 	text-shadow: 0px 0px 8px #009999;
 	text-decoration: none;
 }
+a.disabled {
+	color: #808080;
+	text-shadow: 0px 0px 8px #808080;
+	pointer-events: none;
+}
 a:hover {
 	color: cyan;
 	text-shadow: 0px 0px 8px cyan;
