@@ -90,11 +90,6 @@ a {
 	text-shadow: 0px 0px 8px #009999;
 	text-decoration: none;
 }
-a.disabled {
-	color: #808080;
-	text-shadow: 0px 0px 8px #808080;
-	pointer-events: none;
-}
 a:hover {
 	color: cyan;
 	text-shadow: 0px 0px 8px cyan;
@@ -102,6 +97,12 @@ a:hover {
 .nav_drop_content a:hover {
 	color: white;
 	text-shadow: 0px 0px 8px white;
+}
+
+.disabled_link {
+	color: gray;
+	text-shadow: 0px 0px 8px gray;
+	pointer-events: none;
 }
 
 #history_and_skills {
