@@ -147,7 +147,7 @@ a:hover {
 	margin-right: 10px;
 }
 
-.box, .rss-box {
+.box {
 	box-shadow: 0px 0px 20px cyan;
 	border: 2px solid #99FFFF;
 	outline: 2px solid cyan;
